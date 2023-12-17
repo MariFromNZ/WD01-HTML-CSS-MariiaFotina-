@@ -1,0 +1,90 @@
+@use './variables' as v;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/bgImg.png);
+}
+
+// grid for additional info (education,tools,skills,certificates)
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: -40px;
+    border: 2px solid v.$borderColor;
+
+    .col-4,
+    .col-8 {
+        background-color: v.$background;
+        padding:50px;
+    }
+}
+
+.row-tools {
+    margin-bottom: 20px;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.col-8 {
+    grid-column: span 8;
+}
+
+@media (max-width:1500px) {
+    .works {
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr;
+      }
+}
+
+@media (max-width:1000px) {
+    .hide-text {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .article,
+    .my-photo {
+      flex: 100%;
+    }
+    .row-skills {
+        border-bottom: none;
+    }
+    .row .col-4 {
+        padding-right:0px;
+    }
+    .contacts {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width:700px) {
+    body {
+        background-image: none;
+    }
+    .row {
+        grid-template-columns: none;
+    }
+    .row .col-4 {
+        padding-bottom:0px;
+    }
+}
+
+@media (max-width:500px) {
+    #contact-info-padding-mobile {
+        padding: 20px;
+    }
+    #nav-margin-mobile {
+        margin-bottom: 20px;
+    }
+}
+    
+    
+
